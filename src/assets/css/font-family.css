@@ -1,0 +1,31 @@
+@font-face {
+    font-family: "Overlock";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Overlock"), local("Overlock"),
+      url("../fonts/overlock/Overlock-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
+  }
+  
+  @font-face {
+    font-family: "Sniglet";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Sniglet"), local("Sniglet"),
+      url("../fonts/sniglet/Sniglet-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
+  }
+  
+  @font-face {
+    font-family: "PT Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Sniglet"), local("PT Sans"),
+      url("../fonts/PTSans/PTSans-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
+  }
+  
+  @font-face {
+    font-family: "ArialRoundedMT";
+    font-style: normal;
+    font-weight: 400;
+    src: local("ArialRoundedMT"), local("ArialRoundedMT"),
+      url("../fonts/ArialRoundedMT/Arial_Rounded_MT.ttf") format("truetype"); /* Safari, Android, iOS */
+  }
