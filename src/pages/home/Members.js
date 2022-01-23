@@ -8,15 +8,15 @@ const Members = ()=>{
           <h3 className="text-center font-normal text-6xl">Family Members of Beekaboo</h3>
           <div className="w-full mt-24 grid xl:grid-cols-3 2xl:grid-cols-3 lg: grid-cols-1 gap-4">
             <div className="col-span-1 space-y-4 items-center flex flex-col text-4xl">
-              <img src={person1} alt="" srcset="" />
+              <img src={person1} alt=""  />
               <div>Name</div>
             </div>
             <div className="col-span-1 space-y-4 items-center flex flex-col text-4xl">
-            <img src={person2} alt="" srcset="" />
+            <img src={person2} alt=""  />
               <div>Name</div>
             </div>
             <div className="col-span-1 space-y-4 items-center flex flex-col text-4xl">
-            <img src={person3} alt="" srcset="" />
+            <img src={person3} alt=""  />
               <div>Name</div>
             </div>
           </div>

@@ -9,7 +9,7 @@ export default function Beekaboo(props) {
     
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/3d/Beekaboo.glb')
-  console.log("animation",animations );
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="defaultScene">

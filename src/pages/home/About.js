@@ -11,7 +11,6 @@ const About = (props)=>{
   const onMouseLeaveHoneyAbout= () => {
     setVisibleHoneyAbout(false)
   };
-  console.log(scrollPos,aboutRef);
   useEffect(()=>{
       if(scrollPos > aboutRef - 200){
         titleRef.current.classList.add('typing-text');

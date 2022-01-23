@@ -6,7 +6,9 @@ const HomeAbout = (props)=>{
         <div  className="h-screen w-screen bg-bee-pink-young text-bee-white"  style={{
             backgroundImage: `url(${bgpink})`,
             height: '100vh',
-            fontFamily: 'Sniglet'
+            fontFamily: 'Sniglet',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover'
         }} >
             <div style={{ height: '80vh'}} className="flex gap-16 items-center md:px-16 px-8 pt-16 flex-row-reverse">
                 <div className="flex-1 justify-center flex w-full items-center">

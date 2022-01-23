@@ -1,9 +1,8 @@
-import { createStore } from 'redux';
-import reducer from './reducer';
-
-// ==============================|| REDUX - MAIN STORE ||============================== //
-
-const store = createStore(reducer);
-const persister = 'Free';
-
-export { store, persister };
+import { createStore } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import rootReducer from "./reducer"; 
+const store = createStore(
+  rootReducer,
+  composeWithDevTools()
+)
+export default store;

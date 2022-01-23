@@ -6,8 +6,10 @@ const Slide2 = () => {
       className="w-screen h-screen"
       style={{
         backgroundImage: `url(${bgpink})`,
-        backgroundSize: "100%",
-        backgroundRepeat: "no-repeat",
+        height: '100vh',
+        fontFamily: 'Sniglet',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
         color: "#fff000",
       }}
     >

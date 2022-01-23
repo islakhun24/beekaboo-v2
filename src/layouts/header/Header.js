@@ -8,60 +8,37 @@ import { Link } from "react-router-dom";
 import config from "../../config";
 import { FiShoppingCart, FiUser } from "react-icons/fi";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useSelector } from 'react-redux';
+
+import { BrowserView, MobileView } from 'react-device-detect';
+
 const Header = (props) => {
   const [isToggle, setToggle] = useState(false);
+  const {utils} = useSelector((state) => state);
+  
   const { isMobile } = props;
-  const {
-    scrollPos,
-    headerRef,
-    aboutRef,
-    memberRef,
-    spesialEpisodeRef,
-    songRef,
-    blogRef,
-    shopRef,
-    footerRef,
-  } = props;
-  const [widthP, setWidthP] = useState("");
-
+  console.log('widthP', utils.progressPercent);
   useEffect(() => {
-    if (scrollPos > headerRef && scrollPos < aboutRef) {
-      setWidthP("8%");
-    } else if (aboutRef < scrollPos && scrollPos < memberRef) {
-      setWidthP("16.7%");
-    } else if (memberRef < scrollPos && scrollPos < spesialEpisodeRef) {
-      setWidthP("33.4%");
-    } else if (spesialEpisodeRef < scrollPos && scrollPos < songRef) {
-      setWidthP("50.1%");
-    } else if (songRef < scrollPos && scrollPos < blogRef) {
-      setWidthP("66.8%");
-    } else if (blogRef < scrollPos && scrollPos < shopRef) {
-      setWidthP("83.5%");
-    } else if (shopRef < scrollPos && scrollPos < footerRef) {
-      setWidthP("100%");
-    } else if (footerRef > scrollPos) {
-      setWidthP("100%");
-    } else if (scrollPos === 0) {
-      setWidthP("0%");
-    }
-    if (scrollPos < 56) {
+
+    
+    if (utils.scrollPos < 56) {
       setToggle(false);
     }
-  }, [scrollPos, isToggle]);
+  }, [utils.scrollPos, isToggle, utils.progressPercent]);
   const clickToggle = () => {
     setToggle(!isToggle);
   };
   const styleProgres = {
     height: "4px",
-    width: scrollPos < 30 ? "0%" : widthP,
+    width: utils.scrollPos < 30 ? "0%" : utils.progressPercent,
     backgroundColor: "#fff000",
   };
   return (
     <div>
-      {!isMobile ? (
+      <BrowserView>
         <header
-          style={scrollPos > 20 ? { backgroundColor: "#FFF" } : {}}
-          className=" z-50 fixed bg-white top-0 left-0 w-full"
+          style={utils.scrollPos > 20 ? { backgroundColor: "#FFF" } : {}}
+          className=" z-50 fixed top-0 left-0 w-full"
         >
           <div
             style={{
@@ -80,8 +57,8 @@ const Header = (props) => {
                 paddingBottom: "8px",
               }}
               className={
-                scrollPos > 16
-                  ? "text-black flex flex-grow space-x-8 font-bold text-lg items-center justify-center"
+                utils.scrollPos > 16
+                  ? "text-bee-orange flex flex-grow space-x-8 font-bold text-lg items-center justify-center"
                   : "text-black flex flex-grow space-x-8 font-bold text-lg items-center justify-center"
               }
             >
@@ -112,18 +89,27 @@ const Header = (props) => {
             </div>
             <div className="flex-wrap flex flex-row space-x-8 pl-16 items-center justify-center">
               <button >
-                <FiShoppingCart className="text-bee-black" size={24}/>
+                <FiShoppingCart className={
+                  utils.scrollPos > 16 ?
+                  "text-bee-orange":
+                  "text-bee-black"
+                } size={24}/>
               </button>
                <button>
-                <FiUser className="text-bee-black" size={24}/>
+                <FiUser className={
+                  utils.scrollPos > 16 ?
+                  "text-bee-orange":
+                  "text-bee-black"
+                } size={24}/>
               </button>
             </div>
           </div>
-          {/* <div style={styleProgres}></div> */}
+          <div style={styleProgres}></div>
         </header>
-      ) : (
-        <header
-          style={scrollPos > 20 ? { backgroundColor: "#FFF" } : {}}
+      </BrowserView>
+      <MobileView>
+      <header
+          style={utils.scrollPos > 20 ? { backgroundColor: "#FFF" } : {}}
           className=" z-50  fixed top-0 left-0 w-full"
         >
           <div
@@ -169,7 +155,7 @@ const Header = (props) => {
             </div>
           ) : null}
         </header>
-      )}
+        </MobileView>
     </div>
   );
 };
