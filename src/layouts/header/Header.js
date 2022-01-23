@@ -134,22 +134,22 @@ const Header = (props) => {
                 className="flex flex-col space-y-2 "
               >
                 <Link to={`${config.basename}${"/shop"}`}>
-                <div className="h-10">Shop</div>
+                <div onClick={()=> clickToggle()} className="h-10">Shop</div>
                 </Link>
                 <Link to={`${config.basename}${"/video"}`}>
-                <div className="h-10">Video</div>
+                <div onClick={()=> clickToggle()} className="h-10">Video</div>
                 </Link>
                 <Link to={`${config.basename}${"/music"}`}>
-                <div className="h-10">Music</div>
+                <div onClick={()=> clickToggle()} className="h-10">Music</div>
                 </Link>
                 <Link to={`${config.basename}${"/blog"}`}>
-                <div className="h-10">Blog</div>
+                <div onClick={()=> clickToggle()} className="h-10">Blog</div>
                 </Link>
                 <Link to={`${config.basename}${"/learning-zone"}`}>
-                <div className="h-10">Learning Zone</div>
+                <div onClick={()=> clickToggle()} className="h-10">Learning Zone</div>
                 </Link>
                 <Link to={`${config.basename}${"/about"}`}>
-                <div className="h-10">About</div>
+                <div onClick={()=> clickToggle()} className="h-10">About</div>
                 </Link>
                 <div className="grid grid-cols-2 gap-4">
                   <button className="bg-bee-orange flex justify-center items-center h-10 rounded-lg w-full">
