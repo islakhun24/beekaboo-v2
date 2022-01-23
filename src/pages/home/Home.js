@@ -9,7 +9,7 @@ const Home = () => {
   var backgroundColors = ["#90CAF9", "#FFD101", "#BAB4E4"];
 
   return (
-    <div className="overflow-hidden  w-screen h-screen">
+    <div className="overflow-hidden relative  w-screen h-auto">
       <LiquidSwipe components={componentsToRender} colors={backgroundColors} />
     </div>
   );

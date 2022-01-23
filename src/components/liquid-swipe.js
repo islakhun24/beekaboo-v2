@@ -6,7 +6,7 @@ import styled from "styled-components";
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  // position: absolute;
   overflow: hidden;
   @media only screen and (max-width: 500px) {
     width: 100%;

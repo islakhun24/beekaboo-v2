@@ -100,7 +100,7 @@ function App() {
 
   return (
     <div className="w-screen bg-bee-blue h-auto flex flex-col overflow-hidden">
-      <div className="relative" ref={homeRef}>
+      <div className="relative w-screen h-auto" ref={homeRef}>
         <Home />
       </div>
       <div ref={aboutRef}>
