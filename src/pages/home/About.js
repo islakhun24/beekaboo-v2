@@ -1,6 +1,9 @@
-import honey from "../../assets/svg/honey.svg";
-import honeyabout from "../../assets/svg/honey-about.svg";
-import { createRef, useEffect, useRef, useState } from "react";
+
+import { createRef, Suspense, useEffect, useRef, useState } from "react";
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+import Model from '../../components/3d/Bee_Xmas';
+
 const About = (props) => {
   const { scrollPos, aboutRef } = props;
   const [visibleHoneyAbout, setVisibleHoneyAbout] = useState(false);
@@ -39,8 +42,19 @@ const About = (props) => {
       }}
       className="h-auto w-screen p-8 md:p-16 flex flex-col md:flex-row-reverse gap-16"
     >
-       <div className="flex flex-1 items-center justify-center">
-      <img className="" src={honey} alt="" />
+       <div className=" flex flex-1 items-center justify-center">
+       <Canvas
+         camera={{ position: [2, 0, 12.25], fov: 15 }}
+      >
+         <ambientLight intensity={0.1} />
+         <ambientLight intensity={0.1} />
+         <directionalLight intensity={1} />
+         <Model position={[-40, -22, -220]} />
+         {/* <Suspense fallback={null}>
+            <Model position={[0.025, -0.9, 1]} />
+         </Suspense> */}
+         <OrbitControls enableRotate={false} enableZoom={false} />
+      </Canvas>
       </div>
       <div className="flex flex-1 flex-col items-start justify-center">
         <h1 ref={titleRef} className="text-4xl md:text-6xl ">
